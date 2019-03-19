@@ -75,7 +75,7 @@ public class FooServiceSortingIntegrationTest {
     }
 
     @Test
-    public final void whenSortinfBar_thenPrintBarsSortedWithFoos() {
+    public final void whenSortingBar_thenPrintBarsSortedWithFoos() {
         final String jql = "Select b from Bar as b order by b.id";
         final Query barQuery = entityManager.createQuery(jql);
         final List<Bar> barList = barQuery.getResultList();
