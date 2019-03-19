@@ -134,12 +134,11 @@ public class FooPaginationPersistenceIntegrationTest {
         final CriteriaQuery<Foo> select = criteriaQuery.select(from);
 
         TypedQuery<Foo> typedQuery;
-        while (pageNumber < count.intValue()) {
+        if (pageNumber < count.intValue()) {
             typedQuery = entityManager.createQuery(select);
             typedQuery.setFirstResult(pageNumber - 1);
             typedQuery.setMaxResults(pageSize);
             System.out.println("Current page: " + typedQuery.getResultList());
-            pageNumber += pageSize;
         }
 
     }
